@@ -1,0 +1,77 @@
+# spring 配置
+spring:
+  profiles:
+    # 激活哪个环境配置
+    active: local
+  # 应用配置
+  application:
+    name: lqsblog-api
+  # 数据库连接池
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/lqsblog?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: rot
+  mvc:
+    # 启用 Not Found
+    throw-exception-if-no-handler-found: true
+    # 静态资源访问路径，这样可以解决获取不到 NoHandlerFoundException，并此配置也用到自定义资源映射
+    static-path-pattern: /statics/**
+  servlet:
+    # MULTIPART (MultipartProperties)
+    multipart:
+      # 开启 multipart 上传功能
+      enabled: true
+      # 单个文件的最大值
+      max-file-size: 1MB
+      # 上传文件总的最大值(最大请求大小)
+      max-request-size: 10MB
+# mybatis-plus 配置
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      table-prefix: lqs_
+# server 配置
+server:
+  # 服务器的HTTP端口，默认为8080
+  port: 8088
+  servlet:
+    # 应用的访问路径
+    context-path: /
+# 自定义博客站点配置
+lqsblog:
+  # 网址，上传图片返回地址有用到
+  weburl: http://127.0.0.1:8088
+  # 跨域配置
+  access:
+    # 允许跨域网址 多个,分割
+    origins: http://127.0.0.1:8181,http://127.0.0.1:3000
+  # jwt 配置
+  jwt:
+    config:
+      # 签名私钥
+      key: lqsblog
+      # 签名失效时间 - 毫秒 1800000（0.5小时）
+      ttl: 1800000
+      # 距离签名失效时间多少内可以重置签名 - 毫秒 900000（0.25小时[15分钟]）
+      restttl: 900000
+    header:
+      # Header头 Token 名称
+      tokenkey: lqsblog-token
+  # 上传文件 配置
+  file:
+    # 文件上传目录绑定的自定义网址，可为空(注意如果填写必须 / 结尾)，如下格式：
+    # upload-weburl: http://127.0.0.1:3001/
+    # 默认为空,则上传文件目录的网址为:自定义映射的静态资源网址（${lqsblog.weburl} + ${spring.mvc.static-path-pattern}}）
+    # 参考: cc.liqingsong.api.common.config.MvcConfig.java; cc.liqingsong.common.utils.Upload.java;
+    upload-weburl:
+    # 文件上传的目录(注意必须 / 结尾) 绝对地址（注意Linux和Windows上的目录结构不同）
+    upload-dir: E:/uploads/
+    # 允许图片上传的类型
+    img-type:
+      - image/png
+      - image/gif
+      - image/jpg
+      - image/jpeg

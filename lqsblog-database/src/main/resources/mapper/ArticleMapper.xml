@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cc.liqingsong.database.mapper.ArticleMapper">
+
+    <select id="selectSimplifyVO" resultType="cc.liqingsong.database.vo.admin.ArticleSimplifyVO">
+    SELECT  id, title, addtime
+	FROM lqs_article
+    WHERE id in
+        <foreach  item="item" collection="ids" index="index"  open="(" separator="," close=")">#{item}</foreach>
+    ORDER BY addtime DESC
+    </select>
+
+
+</mapper>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cc.liqingsong.database.mapper.WorksMapper">
+
+    <select id="getStatsDayTotalVO" resultType="cc.liqingsong.database.vo.admin.StatsDayTotalVO">
+        SELECT DATE_FORMAT(create_time,"%Y-%m-%d") as day, count(id) as num
+        FROM lqs_works
+        WHERE (create_time &gt;= #{createTimeStart} AND create_time &lt; #{createTimeEnd})
+        GROUP BY day
+    </select>
+
+
+</mapper>

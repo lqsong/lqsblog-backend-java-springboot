@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cc.liqingsong.database.mapper.ResourceMapper">
+
+    <select id="selectCascaderVO" resultType="cc.liqingsong.database.vo.admin.CascaderVO">
+    SELECT  a.id, a.name, ( CASE WHEN (SELECT count(b.id) FROM lqs_sys_resource b WHERE b.pid=a.id)>0 THEN 'false' ELSE 'true' END) as leaf
+	FROM lqs_sys_resource a
+    WHERE a.pid = #{pid}
+    </select>
+
+
+    <select id="selectIdNamePidVO" resultType="cc.liqingsong.database.vo.admin.IdNamePidVO">
+    SELECT  id, name, pid
+	FROM lqs_sys_resource
+    </select>
+
+
+</mapper>

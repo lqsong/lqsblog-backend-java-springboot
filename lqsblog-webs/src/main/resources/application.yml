@@ -1,0 +1,33 @@
+# spring 配置
+spring:
+  profiles:
+    # 激活哪个环境配置
+    active: local
+  # 应用配置
+  application:
+    name: lqsblog-webs
+  # 数据库连接池
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/lqsblog?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+  # 模板配置
+  thymeleaf:
+    cache: true
+    prefix: classpath:/templates/
+    suffix: .html
+# mybatis-plus 配置
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      table-prefix: lqs_
+# server 配置
+server:
+  # 服务器的HTTP端口，默认为8080
+  port: 8089
+  servlet:
+    # 应用的访问路径
+    context-path: /

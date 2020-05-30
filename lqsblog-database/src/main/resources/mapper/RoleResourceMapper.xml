@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cc.liqingsong.database.mapper.RoleResourceMapper">
+
+    <select id="selectUserResourceVO" resultType="cc.liqingsong.database.vo.admin.UserResourceVO">
+    SELECT re.id,re.name,re.urlcode,re.type
+	FROM lqs_sys_resource re LEFT JOIN lqs_sys_role_resource ro ON re.id=ro.resource_id
+    WHERE ro.role_id in
+        <foreach  item="item" collection="roleIds" index="index"  open="(" separator="," close=")">#{item}</foreach>
+    ORDER BY re.id ASC
+    </select>
+
+</mapper>
