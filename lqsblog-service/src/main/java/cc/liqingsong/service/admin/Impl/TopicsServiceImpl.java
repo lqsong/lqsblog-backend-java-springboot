@@ -124,7 +124,7 @@ public class TopicsServiceImpl  extends ServiceImpl<TopicsMapper, Topics> implem
 
         Assert.fail(null == entity.getDescription(), ResultCode.INCORRECT_PARAMETER);
         int desLen = entity.getDescription().length();
-        Assert.fail(desLen > 100, ResultCode.DESCRIPTION_LENGTH_WORDS);
+        Assert.fail(desLen > 200, ResultCode.DESCRIPTION_LENGTH_WORDS);
 
 
         Assert.fail(null == entity.getAddtime() || StringUtils.isEmpty(entity.getAddtime()), TopicsCode.ADDTIME_NOT_EMPTY);
