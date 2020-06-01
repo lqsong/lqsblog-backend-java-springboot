@@ -14,7 +14,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * 自定义shiro realm
+ * Admin ShiroRealm
+ * @author liqingsong
  */
 public class ShiroAdminRealm extends AuthorizingRealm {
 

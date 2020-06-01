@@ -11,6 +11,7 @@ import org.springframework.web.filter.CorsFilter;
 
 /**
  * 跨域配置
+ * @author liqingsong
  */
 @Configuration
 @ConfigurationProperties(prefix = "lqsblog.access")

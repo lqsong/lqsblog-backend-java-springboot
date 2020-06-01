@@ -10,7 +10,7 @@ public enum LinkCode implements IErrorCode {
     CATEGORY_ALIAS_LENGTH_WORDS(60002,"别名1-10个字符"),
     CATEGORY_ID_NOT_EMPTY(60003,"分类ID不能为空"),
     CATEGORY_ID_LINK_DATA(60004,"分类下有链接，请先删除分类下链接"),
-    TITLE_LENGTH_WORDS(60005,"标题5-50个字"),;
+    TITLE_LENGTH_WORDS(60005,"标题3-50个字"),;
 
     // 操作代码
     int code;

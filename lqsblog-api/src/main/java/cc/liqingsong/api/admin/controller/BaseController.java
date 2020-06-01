@@ -25,16 +25,7 @@ public class BaseController {
     @Value("${lqsblog.jwt.header.tokenkey}")
     protected String tokenkey;
 
-   /* protected JwtUtils jwtUtils;
-
-    @Autowired
-    public void setJwtUtils(JwtUtils jwtUtils) {
-        this.jwtUtils = jwtUtils;
-    }*/
-
-
     protected JwtUserToken jwtUserToken;
-
     @Autowired
     public void setJwtUserToken(JwtUserToken jwtUserToken) {
         this.jwtUserToken = jwtUserToken;
@@ -59,33 +50,6 @@ public class BaseController {
         this.request = request;
         this.response = response;
 
-        // 存 jwt 方式
-        /*
-        String token = request.getHeader(this.tokenkey);
-        if(!StringUtils.isEmpty(token)) {
-
-            Claims claims = jwtUtils.parseJWT(token);
-
-            this.userId = Integer.valueOf(claims.getId());
-
-        }
-        */
-
-        // shiro 方式
-        /*
-        //获取session中的安全数据
-        Subject subject = SecurityUtils.getSubject();
-        //subject获取所有的安全集合
-        PrincipalCollection principals = subject.getPrincipals();
-        if (principals != null && !principals.isEmpty()){
-            //获取安全数据
-            User user = (User) principals.getPrimaryPrincipal();
-            this.userId = Math.toIntExact(user.getId());
-
-        }
-        */
-
-        // shiro + jwt
         // 获取session中的安全数据
         Subject subject = SecurityUtils.getSubject();
         // 如果没有登录

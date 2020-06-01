@@ -127,7 +127,7 @@ public class ArticleCategoryServiceImpl  extends ServiceImpl<ArticleCategoryMapp
 
         Assert.fail(null == entity.getDescription(), ResultCode.INCORRECT_PARAMETER);
         int desLen = entity.getDescription().length();
-        Assert.fail(desLen > 100, ResultCode.DESCRIPTION_LENGTH_WORDS);
+        Assert.fail(desLen > 200, ResultCode.DESCRIPTION_LENGTH_WORDS);
 
         QueryWrapper<ArticleCategory> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("alias",entity.getAlias());

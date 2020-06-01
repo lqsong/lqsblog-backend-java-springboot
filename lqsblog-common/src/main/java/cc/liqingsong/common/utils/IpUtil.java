@@ -4,6 +4,10 @@ import javax.servlet.http.HttpServletRequest;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
+/**
+ * 自定义 IP工具
+ * @author liqingsong
+ */
 public class IpUtil {
     private static final String UNKNOWN = "unknown";
     private static final String LOCALHOST = "127.0.0.1";

@@ -4,7 +4,7 @@ import cc.liqingsong.common.enums.IErrorCode;
 
 public enum WorksCode implements IErrorCode {
     // ---错误返回码 4xxxx-----
-    TITLE_LENGTH_WORDS(40001,"标题5-100个字"),
+    TITLE_LENGTH_WORDS(40001,"标题3-100个字"),
     ADDTIME_NOT_EMPTY(40002,"发布时间不能为空");
 
     // 操作代码

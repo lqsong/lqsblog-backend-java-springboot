@@ -22,6 +22,10 @@ import java.nio.file.StandardCopyOption;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+/**
+ * 自定义 上传
+ * @author liqingsong
+ */
 @ConfigurationProperties("lqsblog.file")
 @EnableConfigurationProperties(Upload.class)
 public class Upload {

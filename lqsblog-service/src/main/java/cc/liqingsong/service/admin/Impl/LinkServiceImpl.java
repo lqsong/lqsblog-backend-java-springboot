@@ -99,13 +99,13 @@ public class LinkServiceImpl extends ServiceImpl<LinkMapper, Link> implements Li
 
         Assert.fail(null == entity.getTitle(), ResultCode.TITLE_NOT_EMPTY);
         int titleLen = entity.getTitle().length();
-        Assert.fail(titleLen > 50 || titleLen < 5, LinkCode.TITLE_LENGTH_WORDS);
+        Assert.fail(titleLen > 50 || titleLen < 3, LinkCode.TITLE_LENGTH_WORDS);
 
         Assert.fail(null == entity.getCategoryId(), LinkCode.CATEGORY_ID_NOT_EMPTY);
 
         Assert.fail(null == entity.getDescription(), ResultCode.INCORRECT_PARAMETER);
         int desLen = entity.getDescription().length();
-        Assert.fail(desLen > 100, ResultCode.DESCRIPTION_LENGTH_WORDS);
+        Assert.fail(desLen > 200, ResultCode.DESCRIPTION_LENGTH_WORDS);
 
 
         Assert.fail(null == entity.getLogo(), ResultCode.INCORRECT_PARAMETER);

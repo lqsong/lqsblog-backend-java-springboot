@@ -2,6 +2,10 @@ package cc.liqingsong.api.admin.realm;
 
 import org.apache.shiro.authc.AuthenticationToken;
 
+/**
+ * Admin JwtToken
+ * @author liqingsong
+ */
 public class JwtToken implements AuthenticationToken {
 
     // 密钥

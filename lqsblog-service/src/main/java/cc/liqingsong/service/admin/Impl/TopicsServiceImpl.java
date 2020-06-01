@@ -112,7 +112,7 @@ public class TopicsServiceImpl  extends ServiceImpl<TopicsMapper, Topics> implem
 
         Assert.fail(null == entity.getTitle(), ResultCode.TITLE_NOT_EMPTY);
         int titleLen = entity.getTitle().length();
-        Assert.fail(titleLen > 50 || titleLen < 5, TopicsCode.TITLE_LENGTH_WORDS);
+        Assert.fail(titleLen > 50 || titleLen < 3, TopicsCode.TITLE_LENGTH_WORDS);
 
         Assert.fail(null == entity.getAlias(), TopicsCode.ALIAS_NOT_EMPTY);
         int aliasLen = entity.getAlias().length();

@@ -9,7 +9,7 @@ public enum ArticleCode implements IErrorCode {
     CATEGORY_ALIAS_THE_SAME(30002,"存在相同别名"),
     CATEGORY_ALIAS_LENGTH_WORDS(30003,"别名1-10个字符"),
     CATEGORY_ID_LINK_DATA(30003,"分类下有数据，请先删除分类下数据"),
-    TITLE_LENGTH_WORDS(30004,"标题5-100个字"),
+    TITLE_LENGTH_WORDS(30004,"标题3-100个字"),
     CATEGORY_ID_NOT_EMPTY(30005,"分类ID不能为空"),
     ADDTIME_NOT_EMPTY(30005,"发布时间不能为空");
 

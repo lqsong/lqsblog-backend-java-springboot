@@ -12,6 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Admin JwtFilter
+ * @author liqingsong
+ */
 public class JwtFilter extends BasicHttpAuthenticationFilter {
 
 

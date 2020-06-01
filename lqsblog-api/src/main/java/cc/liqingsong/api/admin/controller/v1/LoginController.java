@@ -55,37 +55,6 @@ public class LoginController {
         String code = jwtImgCodeToken.parseImgCode(loginDTO.getImgCodeToken());
         Assert.fail(!loginDTO.getImgCode().equals(code) , UserCode.LOGIN_IMGCODE_ERROR);
 
-        // 纯jwt 登录认证
-        /*
-        User user = userService.loginUser(loginDTO);
-
-        String token = jwtUserToken.getToken(user);
-
-        return new Result(ResultCode.SUCCESS, token);
-        */
-
-        // 存 shiro 登录认证
-        /*
-        String sessionId = null;
-        try {
-            // 1、构造登录令牌
-            UsernamePasswordToken upToken = new UsernamePasswordToken(username,password);
-            // 2、获取subject
-            Subject subject = SecurityUtils.getSubject();
-            // 3、调用login,进入realm认证
-            subject.login(upToken);
-            // 4、获取sessionid
-            sessionId = (String) subject.getSession().getId();
-            // 5、构造返回结果
-        } catch (Exception e) {
-            System.out.println(e);
-            Assert.fail("用户或密码错误！");
-        }
-
-        return new Result(ResultCode.SUCCESS, sessionId);
-        */
-
-        // shiro + jwt
         User user = userService.loginUser(loginDTO);
 
         String token = jwtUserToken.getToken(user);

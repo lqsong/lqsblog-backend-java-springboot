@@ -3,15 +3,10 @@ package cc.liqingsong.api.admin.controller.v1;
 import cc.liqingsong.api.admin.utils.JwtImgCodeToken;
 import cc.liqingsong.common.entity.Result;
 import cc.liqingsong.common.enums.ResultCode;
-import cc.liqingsong.common.utils.ImgValidateCodeUtil;
-import cc.liqingsong.database.vo.admin.ImgCodeTokenVO;
-import cc.liqingsong.database.vo.admin.LoginVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Map;
 
 /**
  * 验证码控制器

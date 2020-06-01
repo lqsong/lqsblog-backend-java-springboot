@@ -20,6 +20,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * Admin JwtShiroRealm
+ * @author liqingsong
+ */
 public class JwtShiroAdminRealm extends AuthorizingRealm {
 
     private UserService userService;

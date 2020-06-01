@@ -116,7 +116,7 @@ public class WorksServiceImpl extends ServiceImpl<WorksMapper, Works> implements
 
         Assert.fail(null == entity.getTitle(), ResultCode.TITLE_NOT_EMPTY);
         int titleLen = entity.getTitle().length();
-        Assert.fail(titleLen > 100 || titleLen < 5, WorksCode.TITLE_LENGTH_WORDS);
+        Assert.fail(titleLen > 100 || titleLen < 3, WorksCode.TITLE_LENGTH_WORDS);
 
         Assert.fail(null == entity.getAddtime() || StringUtils.isEmpty(entity.getAddtime()), WorksCode.ADDTIME_NOT_EMPTY);
 

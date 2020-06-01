@@ -9,6 +9,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
+/**
+ * 自定义 图片验证码 生成 base64
+ * @author liqingsong
+ */
 public class ImgValidateCodeUtil {
 
     private static Random random = new Random();

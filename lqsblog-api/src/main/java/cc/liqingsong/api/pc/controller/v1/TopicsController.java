@@ -52,7 +52,7 @@ public class TopicsController extends BaseController {
     public Result topicsDetail(String alias) {
         TopicsDetailVO vo = topicsService.TopicsDetailVOByAliasAndAddHit(alias);
         if(null == vo) {
-            return new Result(ResultCode.SUCCESS);
+            return new Result(ResultCode.NOT_FOUND);
         }
 
         // 添加Log

@@ -127,7 +127,7 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
 
         Assert.fail(null == entity.getTitle(), ResultCode.TITLE_NOT_EMPTY);
         int titleLen = entity.getTitle().length();
-        Assert.fail(titleLen > 100 || titleLen < 5, ArticleCode.TITLE_LENGTH_WORDS);
+        Assert.fail(titleLen > 100 || titleLen < 3, ArticleCode.TITLE_LENGTH_WORDS);
 
         Assert.fail(null == entity.getCategoryId(), ArticleCode.CATEGORY_ID_NOT_EMPTY);
         Assert.fail(null == entity.getCategoryIds(), ArticleCode.CATEGORY_ID_NOT_EMPTY);

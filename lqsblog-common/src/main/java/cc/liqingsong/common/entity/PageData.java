@@ -7,6 +7,10 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+/**
+ * list Data
+ * @author liqingsong
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
